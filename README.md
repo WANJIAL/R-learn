@@ -18,4 +18,8 @@ sed 's/chr_/chromosome_/g' test_command.gtf | cut -f 1,3,4,5
 ```
 awk '{line=$2; $2=$3; $3=line; print}' test_command.gtf | sort -n -k 4,4 -k5,5 > result.gtf
 ```
+5. 更改示例文件的权限，使得文件所有者及所在用户组用户可读、写、执行而其他用户只可读，展示权限修改前后的权限变化。
+```
+chmod -R 774 cp_floder
+```
 
