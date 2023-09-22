@@ -14,3 +14,8 @@ grep `chr` test_command.gtf | grep 'YDL248'
 ```
 sed 's/chr_/chromosome_/g' test_command.gtf | cut -f 1,3,4,5
 ```
+4. 通过 `man` 命令以及更多的资料学习简单的 `awk` 命令，尝试互换示例文件的第2列和第3列，并且对输出结果利用 `sort` 命令依照第4和第5列数字大小排序，将最终结果输出到 `result.gtf` 文件中。
+```
+awk '{line=$2; $2=$3; $3=line; print}' test_command.gtf | sort -n -k 4,4 -k5,5 > result.gtf
+```
+
