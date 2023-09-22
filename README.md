@@ -10,3 +10,7 @@ cat test_command.txt
 ```
 grep `chr` test_command.gtf | grep 'YDL248'
 ```
+3.利用 sed 等命令将示例文件中的 chr_ 替换为 chromosome_ 并输出每行的第1，3，4，5列。（无需改动原文件，只输出结果）  
+```
+sed 's/chr_/chromosome_/g' test_command.gtf | cut -f 1,3,4,5
+```
